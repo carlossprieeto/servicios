@@ -1,0 +1,23 @@
+;
+; BIND reverse data file for local loopback interface
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; FICHERO DE BUSQUEDA INVERSA: db.192.168.229
+;;;;;;;;;;ABAJO LA IP AL REVES!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+$TTL	604800
+@	IN	SOA	229.168.192.in-addr.arpa. admin.yahoo.es. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+
+;REGISTROS TIPO NS. Declaracion del SERVER-DNS
+@	IN	NS	servernix1.dnsalfa.net.
+
+;REGISTROS TIPO PTR. Declaracion de HOSTS - DECLARAR SERVIDOR TAMBIEN.
+200	IN	PTR	servernix1.dnsalfa.net.
+100	IN	PTR	pcubuntug.dnsalfa.net.
+101	IN	PTR	pcwin10.dnsalfa.net.
+102	IN	PTR	pcdebiant.dnsalfa.net.

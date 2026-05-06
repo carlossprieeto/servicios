@@ -1,0 +1,26 @@
+;
+; BIND data file for local loopback interface
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; FICHERO BUSQUEDA DIRECTA red1.org
+
+$TTL	604800
+@		IN	SOA	dnsalfa.net. master.gmail.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+; REGISTROS NS. Servidor DNS.
+@		IN	NS	servernix1.dnsalfa.net.
+
+;REGISTROS TIPO A: Lista de Equipos de la red.
+servernix1	IN	A	192.168.229.200
+pcubuntug		IN	A	192.168.229.100
+pcwin10		IN	A	192.168.229.101
+pcdebiant		IN	A	192.168.229.102
+
+;REGISTROS CNAME: ALIAS.
+dnsnix1	IN	CNAME	servernix1
