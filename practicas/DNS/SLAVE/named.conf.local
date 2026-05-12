@@ -1,0 +1,114 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+/////////////////////////////////////////////////7
+// CONFIGURACION DNS
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "dominio.org"
+{
+    type slave;
+    file "/etc/bind/zonas/db.dominio.org";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24;};
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!!!!
+zone "6.4.2.in-addr.arpa"
+{
+    type slave;
+    file "/etc/bind/zonas/db.2.4.6";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24;};
+
+};
+
+
+/////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "subdominio1.dominio.org"
+{
+    type slave;
+    file "/etc/bind/zonas/db.subdominio1.dominio.org";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24; 1.3.5.0/24;};
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!!!!
+zone "5.3.1.in-addr.arpa"
+{
+    type slave;
+    file "/etc/bind/zonas/db.1.3.5";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24; 1.3.5.0/24;};
+
+};
+
+
+/////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "subdominio2.dominio.org"
+{
+    type slave;
+    file "/etc/bind/zonas/db.subdominio2.dominio.org";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24; 7.9.11.0/24;};
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!!!!
+zone "11.9.7.in-addr.arpa"
+{
+    type slave;
+    file "/etc/bind/zonas/db.7.9.11";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24; 7.9.11.0/24;};
+
+};
+
+
+/////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "subdominio3.dominio.org"
+{
+    type slave;
+    file "/etc/bind/zonas/db.subdominio3.dominio.org";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24; 13.15.17.0/24;};
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!!!!
+zone "17.15.13.in-addr.arpa"
+{
+    type slave;
+    file "/etc/bind/zonas/db.13.15.17";
+    masters {2.4.6.8;};
+    allow-query { 2.4.6.0/24; 13.15.17.0/24;};
+
+};
+
+
+/////////////////////////////////////////////////
