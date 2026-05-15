@@ -1,0 +1,23 @@
+;
+; BIND data file for local loopback interface
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; FICHERO BUSQUEDA DIRECTA red1.org
+
+$TTL	604800
+@		IN	SOA	empresa.org. master.gmail.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+; REGISTROS NS. Servidor DNS.
+@		IN	NS	serverddns.empresa.org.
+
+;REGISTROS TIPO A: Lista de Equipos de la red.
+serverddns	IN	A	11.110.120.250
+
+;REGISTROS CNAME: ALIAS.
+ddnsnix	IN	CNAME	serverddns

@@ -1,0 +1,26 @@
+;
+; BIND data file for local loopback interface
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; FICHERO BUSQUEDA DIRECTA red1.org
+
+$TTL	604800
+@		IN	SOA	dnsbeta.org. master.gmail.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+; REGISTROS NS. Servidor DNS.
+@		IN	NS	servernix1.dnsbeta.org.
+
+;REGISTROS TIPO A: Lista de Equipos de la red.
+servernix1	IN	A	175.185.229.200
+pcdebiant		IN	A	175.185.229.102
+pcdebiang		IN	A	175.185.229.104
+pcwin10		IN	A	175.185.229.106
+
+;REGISTROS CNAME: ALIAS.
+dnsnix1	IN	CNAME	servernix1
