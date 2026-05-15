@@ -1,0 +1,86 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+/////////////////////////////////////////////////7
+// CONFIGURACION DNS
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "empresa.org"
+{
+    type master;
+    file "/etc/bind/ddns/db.empresa.org";
+    allow-query {127.0.0.1; 11.110.120.0/24;};
+    allow-update { key "rndc-key";};
+    notify yes;
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!!!!
+zone "120.110.11.in-addr.arpa"
+{
+    type master;
+    file "/etc/bind/ddns/db.11.110.120";
+    allow-query {127.0.0.1; 11.110.120.0/24;};
+    allow-update { key "rndc-key";};
+    notify yes;
+
+};
+
+
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "dpto1.empresa.org"
+{
+    type master;
+    file "/etc/bind/ddns/db.dpto1.empresa.org";
+    allow-query {127.0.0.1; 10.100.101.0/24;};
+    allow-update { key "rndc-key";};
+    notify yes;
+
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!
+zone "101.100.10.in-addr.arpa"
+{
+    type master;
+    file "/etc/bind/ddns/db.10.100.101";
+    allow-query {127.0.0.1; 10.100.101.0/24;};
+    allow-update { key "rndc-key";};
+    notify yes;
+
+};
+
+
+
+/////////////////////////////////////////////////
+
+//ZONA BUSQUEDA DIRECTA
+zone "dpto2.empresa.org"
+{
+    type master;
+    file "/etc/bind/ddns/db.dpto2.empresa.org";
+    allow-query {127.0.0.1; 20.200.202.0/24;};
+    allow-update { key "rndc-key";};
+    notify yes;
+
+};
+
+
+//ZONA BUSQUEDA INVERSA PONER IP AL REVES!!
+zone "202.200.20.in-addr.arpa"
+{
+    type master;
+    file "/etc/bind/ddns/db.20.200.202";
+    allow-query {127.0.0.1; 20.200.202.0/24;};
+    allow-update { key "rndc-key";};
+    notify yes;
+
+};

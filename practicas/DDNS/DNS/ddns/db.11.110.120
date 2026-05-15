@@ -1,0 +1,15 @@
+$ORIGIN .
+$TTL 604800	; 1 week
+120.110.11.in-addr.arpa	IN SOA	120.110.11.in-addr.arpa. admin.yahoo.es. (
+				2          ; serial
+				604800     ; refresh (1 week)
+				86400      ; retry (1 day)
+				2419200    ; expire (4 weeks)
+				604800     ; minimum (1 week)
+				)
+			NS	serverddns.empresa.org.
+$ORIGIN 120.110.11.in-addr.arpa.
+$TTL 3600	; 1 hour
+1			PTR	debian.empresa.org.
+$TTL 604800	; 1 week
+250			PTR	serverddns.empresa.org.
